@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charsect="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <tile>Modelo</tile>
+    <style>
+        body {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    {# Comentário jinga2 => não aparcee na página nem no fonte#}
+    <p>página modelo</p>
+    <p>
+        {{ 5+ 8 }} {# Para valores fixos #}
+    </p>
+    <p>
+        {{ x + y }} {# valores vindo do front por variável#}
+    </p>
+    {% if x >=50 %} {# Interação com if #}
+    <p>Maior que 50</p>
+    {% else %}
+    <p>Menor que 50</p>
+
+    {% endif %}
+    <hr>
+    <table>
+        {% for k, v in query.items() %}
+        <tr>
+            <th>{{ k }}</th>
+            <th>{{ v }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
